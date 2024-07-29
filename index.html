@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Keep</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    
+  <div class="modal">
+    <div class="modal-content">
+      <input class="modal-title" placeholder="Title" type="text">
+      <input class="modal-text" placeholder="Take a note..." type="text">
+      <span class="modal-close-button">Close</span>
+    </div>
+  </div>
+    <nav>
+      <div class="logo-area">
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">menu</span>
+          <span class="tooltip-text">Main Menu</span>
+        </div>
+
+        <img
+          class="gb_uc gb_7d"
+          src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+          srcset="
+            https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x,
+            https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x
+          "
+          alt=""
+          aria-hidden="true"
+          style="width: 40px; height: 40px;"
+        />
+        <span class="logo-text">Keep</span>
+      </div>
+
+      <div class="search-area">
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">search</span>
+          <span class="tooltip-text">Search</span>
+        </div>
+        <input type="text" placeholder="Search" />
+      </div>
+      <div class="settings-area">
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">refresh</span>
+          <span class="tooltip-text">Refresh</span>
+        </div>
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">view_agenda</span>
+          <span class="tooltip-text">List View</span>
+        </div>
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">settings</span>
+          <span class="tooltip-text">Settings</span>
+        </div>
+      </div>
+      <div class="profile-actions-area">
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">apps</span>
+          <span class="tooltip-text">Apps</span>
+        </div>
+        <div class="tooltip">
+          <span class="material-icons-outlined hover">account_circle</span>
+          <span class="tooltip-text">Account</span>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <div class="sidebar">
+        <div class="sidebar-item">
+          <span class="material-icons-outlined hover active">lightbulb</span>
+          <span class="sidebar-text">Notes</span>
+        </div>
+        <div class="sidebar-item">
+          <span class="material-icons-outlined hover">notifications</span>
+          <span class="sidebar-text">Reminders</span>
+        </div>
+        <div class="sidebar-item">
+          <span class="material-icons-outlined hover">edit</span>
+          <span class="sidebar-text">Edit Labels</span>
+        </div>
+        <div class="sidebar-item">
+          <span class="material-icons-outlined hover">archive</span>
+          <span class="sidebar-text">Archive</span>
+        </div>
+        <div class="sidebar-item">
+          <span class="material-icons-outlined hover">delete</span>
+          <span class="sidebar-text">Trash</span>
+        </div>
+      </div>
+      <div class="form-container" onclick="add(this)">
+        <form>
+          <input class="note-text" type="text" placeholder="Take a note..." />
+          <div class="form-actions">
+            <div class="tooltip">
+              <span class="material-icons-outlined hover">check_box</span>
+              <span class="tooltip-text">New List</span>
+            </div>
+            <div class="tooltip">
+              <span class="material-icons-outlined hover">brush</span>
+              <span class="tooltip-text">New Drawing</span>
+            </div>
+            <div class="tooltip">
+              <span class="material-icons-outlined hover">image</span>
+              <span class="tooltip-text">New Image</span>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="form-container active-form">
+        <form id="addNote"  >
+          <input id="title" type="text" class="note-title" placeholder="Title" />
+          <input id="textNote" class="note-text" type="text" placeholder="Take a note..." />
+          <div class="form-actions">
+            <div class="icons">
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >add_alert</span
+                >
+                <span class="tooltip-text">Remind me</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >person_add</span
+                >
+                <span class="tooltip-text">Collaborator</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >palette</span
+                >
+                <span class="tooltip-text">Change Color</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >image</span
+                >
+                <span class="tooltip-text">Add Image</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >archive</span
+                >
+                <span class="tooltip-text">Archive</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >more_vert</span
+                >
+                <span class="tooltip-text">More</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >undo</span
+                >
+                <span class="tooltip-text">Undo</span>
+              </div>
+              <div class="tooltip">
+                <span class="material-icons-outlined hover small-icon"
+                  >redo</span
+                >
+                <span class="tooltip-text">Redo</span>
+              </div>
+            </div>
+            <button class="close-btn">Add</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="notes">
+          
+      </div>
+
+      <div class="modal">
+        <div class="modal-content">
+          <div class="form-container active-form">
+            <form>
+              <input type="text" class="note-title" placeholder="Title" />
+              <input
+                class="note-text"
+                type="text"
+                placeholder="Take a note..."
+              />
+              <div class="form-actions">
+                <div class="icons">
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >add_alert</span
+                    >
+                    <span class="tooltip-text">Remind me</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >person_add</span
+                    >
+                    <span class="tooltip-text">Collaborator</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >palette</span
+                    >
+                    <span class="tooltip-text">Change Color</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >image</span
+                    >
+                    <span class="tooltip-text">Add Image</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >archive</span
+                    >
+                    <span class="tooltip-text">Archive</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >more_vert</span
+                    >
+                    <span class="tooltip-text">More</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >undo</span
+                    >
+                    <span class="tooltip-text">Undo</span>
+                  </div>
+                  <div class="tooltip">
+                    <span class="material-icons-outlined hover small-icon"
+                      >redo</span
+                    >
+                    <span class="tooltip-text">Redo</span>
+                  </div>
+                </div>
+                <button class="close-btn">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var displayAt;
+      function add(e){
+        document.querySelector(".active-form").style.display="block"
+        displayAt=e
+        console.log(displayAt)
+        e.style.display="none"
+      }
+        document.querySelector("#addNote").addEventListener("submit",function(e){
+            e.preventDefault()
+            let first=document.querySelector("#title")
+            let second=document.querySelector("#textNote")
+            let val1=first.value
+            let val2=second.value
+            let addNotes=document.querySelector(".notes")
+            let newDiv=document.createElement("div")
+            newDiv.className="note"
+            newDiv.setAttribute('onclick','edit(this)')
+            newDiv.setAttribute('onmouse','disk(this)')
+            newDiv.innerHTML=`
+            <span   class="material-icons check-circle">check_circle</span>
+          <div  class="title">${val1}</div>
+          <div class="text">${val2}</div>
+          <div class="note-footer">
+            <div class="tooltip">
+              <span class="material-icons-outlined hover small-icon"
+                >add_alert</span
+              >
+              <span class="tooltip-text">Remind me</span>
+            </div>
+            <div class="tooltip">
+              <span class="material-icons-outlined hover small-icon"
+                >person_add</span
+              >
+              <span class="tooltip-text">Collaborator</span>
+            </div>
+            <div class="tooltip">
+              <span class="material-icons-outlined hover small-icon"
+                >palette</span
+              >
+              <span class="tooltip-text">Change Color</span>
+            </div>
+            <div class="tooltip">
+              <span class="material-icons-outlined hover small-icon"
+                >image</span
+              >
+              <span class="tooltip-text">Add Image</span>
+            </div>
+            <div class="tooltip">
+              <span class="material-icons-outlined hover small-icon"
+                >archive</span
+              >
+              <span class="tooltip-text">Archive</span>
+            </div>
+            <div class="tooltip" >
+              <span class="material-icons-outlined hover small-icon"
+                >more_vert</span
+              >
+              <span class="tooltip-text" >More</span>
+            </div>
+            `
+            // console.log(document.querySelector(".title").text.content)
+            addNotes.appendChild(newDiv)
+            document.querySelector(".active-form").style.display="none"
+            displayAt.style.display="block"
+            first.value=""
+            second.value=""
+        })
+        
+        var title=document.querySelector(".modal-title")
+        var note=document.querySelector(".modal-text")
+        let modal=document.querySelector(".modal")
+        var current;
+        function edit(e){
+          let parent=e.children;
+          let first=parent[1]
+          let second=parent[2]
+          title.value=first.textContent
+          note.value=second.textContent
+          modal.classList.toggle("open-modal")
+          current=e;
+          console.log(e)
+        }
+        let closeButton=document.querySelector(".modal-close-button")
+        closeButton.addEventListener('click',function(e){
+          let modal=document.querySelector(".modal")
+          let parent=current.children
+          parent[1].innerHTML=title.value
+          parent[2].innerHTML=note.value
+          modal.classList.toggle("open-modal")
+        })
+        
+        function disk(e){
+          let parent=e.children
+          parent[0].style.display="block"
+        } 
+    </script>
+  </body>
+</html>
